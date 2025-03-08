@@ -14,7 +14,7 @@ async function fetchNewData(userName) {
     localStorage.getItem("fetch") == undefined
   ) {
     const raw = await fetch(
-      `https://random-yt-video-picker.onrender.com/api/videos?userName=${userName}`
+      `https://random-yt-video-picker-production.up.railway.app/api/videos?userName=${userName}`
     );
     const newData = await raw.json();
     localStorage.setItem("fetch", JSON.stringify(newData));
