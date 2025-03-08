@@ -10,11 +10,13 @@ export default function Main({ id, title }) {
   return (
     <>
       <main>
-        <div className="iframeContainer">
-          <p>Write a</p>
-          <p>Channel's username</p>
-          <p>in the bar!</p>
-        </div>
+        {state.counter == 0 && (
+          <div className="iframeContainer">
+            <p>Write a</p>
+            <p>Channel's username</p>
+            <p>in the bar!</p>
+          </div>
+        )}
         {loading && <div>{"Loading..."}</div>}
         {!loading && (
           <LiteYouTubeEmbed id={data.newVideoId} title={data.newchannelTitle} />

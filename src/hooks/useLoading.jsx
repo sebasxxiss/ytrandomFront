@@ -26,15 +26,15 @@ export function useLoading(userName) {
   const { state } = useContext(searchContext);
   useEffect(() => {
     (async () => {
-      setLoading((prev) => !prev);
-      if (localStorage.getItem("fetch") == null || state.search != "") {
+      setLoading(() => true);
+      if (localStorage.getItem("fetch") == null && state.search != "") {
         await fetchNewData(userName);
         const { newchannelTitle, newVideoId } = getRandomVideo(
           JSON.parse(localStorage.getItem("fetch"))
         );
         setData({ newchannelTitle, newVideoId });
       }
-      setLoading((prev) => !prev);
+      setLoading(() => false);
     })();
   }, [state.search]);
   useEffect(() => {
