@@ -27,7 +27,7 @@ export function useLoading(userName) {
   useEffect(() => {
     (async () => {
       setLoading((prev) => !prev);
-      if (localStorage.getItem("fetch") == null) {
+      if (localStorage.getItem("fetch") == null || state.search != "") {
         await fetchNewData(userName);
         const { newchannelTitle, newVideoId } = getRandomVideo(
           JSON.parse(localStorage.getItem("fetch"))
