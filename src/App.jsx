@@ -1,4 +1,3 @@
-import "./App.css";
 import Header from "./Components/Header";
 import Main from "./Components/Main";
 import SearchProvider from "./Contexts/searchProvider.jsx";
