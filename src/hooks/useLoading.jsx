@@ -8,14 +8,17 @@ function getRandomVideo(newData) {
   const newVideoId = newVideo.snippet.resourceId.videoId;
   return { newchannelTitle, newVideoId };
 }
+let link = "https://random-yt-video-picker-production.up.railway.app";
+if (process.env.devLink != null || process.env.devLink != undefined) {
+  link = process.env.devLink;
+}
+
 async function fetchNewData(userName) {
   if (
     localStorage.getItem("fetch") == null ||
     localStorage.getItem("fetch") == undefined
   ) {
-    const raw = await fetch(
-      `https://random-yt-video-picker-production.up.railway.app/api/videos?userName=${userName}`
-    );
+    const raw = await fetch(`${link}/api/videos?userName=${userName}`);
     const newData = await raw.json();
     localStorage.setItem("fetch", JSON.stringify(newData));
   }

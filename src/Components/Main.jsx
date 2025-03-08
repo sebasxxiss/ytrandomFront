@@ -1,8 +1,8 @@
 import LiteYouTubeEmbed from "react-lite-youtube-embed";
 import "react-lite-youtube-embed/dist/LiteYouTubeEmbed.css";
-import { useLoading } from "../hooks/useLoading";
+import { useLoading } from "../hooks/useLoading.jsx";
 import { useContext } from "react";
-import { searchContext } from "../Contexts/searchProvider";
+import { searchContext } from "../Contexts/searchProvider.jsx";
 
 export default function Main({ id, title }) {
   const { state } = useContext(searchContext);
