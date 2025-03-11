@@ -1,17 +1,8 @@
 @import "tailwindcss";
-
 html {
   color-scheme: dark;
   margin: 0;
   padding: 0;
-}
-iframe {
-  border: none;
-  height: 499.5px;
-  width: 888px;
-  aspect-ratio: 16/9;
-  border-radius: 15px;
-  margin-left: 95px;
 }
 .iframeContainer {
   gap: 10px;
@@ -19,7 +10,7 @@ iframe {
   align-items: center;
   justify-content: center;
   position: absolute;
-  background-color: gray;
+  background-color: rgb(89, 89, 89);
   border: none;
   height: 499.5px;
   width: 888px;
@@ -30,6 +21,7 @@ iframe {
     font-size: 1.3em;
   }
 }
+
 @keyframes wave {
   0% {
     transform: scale(1);
@@ -42,59 +34,111 @@ iframe {
   }
 }
 @media (max-width: 1000px) {
-  iframe,
   .iframeContainer {
     height: 393.75px;
     width: 700px;
   }
+  main {
+    iframe {
+      height: 393.75px;
+      width: 700px;
+    }
+    article {
+      height: 393.75px;
+      width: 700px;
+    }
+  }
 }
+
 @media (max-width: 800px) {
-  iframe,
   .iframeContainer {
     height: 337.5px;
     width: 600px;
   }
+  main {
+    iframe {
+      height: 337.5px;
+      width: 600px;
+    }
+    article {
+      height: 337.5px;
+      width: 600px;
+    }
+  }
 }
 @media (max-width: 700px) {
-  iframe,
   .iframeContainer {
     height: 281.25px;
     width: 500px;
   }
+  main {
+    iframe {
+      height: 281.25px;
+      width: 500px;
+    }
+    article {
+      height: 281.25px;
+      width: 500px;
+    }
+  }
 }
 @media (max-width: 600px) {
-  iframe,
   .iframeContainer {
     height: 196.88px;
     width: 350px;
     margin: 0;
   }
   main {
+    iframe {
+      height: 196.88px;
+      width: 350px;
+      margin: 0;
+    }
+    article {
+      height: 196.88px;
+      width: 350px;
+      margin: 0;
+    }
+  }
+  #mainContainer {
     justify-content: center;
   }
 }
 @media (max-width: 570px) {
-  iframe,
   .iframeContainer {
     height: 196.88px;
     width: 350px;
     margin: 0;
     resize: none;
   }
-  header {
+  main {
+    iframe {
+      height: 196.88px;
+      width: 350px;
+      margin: 0;
+      resize: none;
+    }
+    article {
+      height: 196.88px;
+      width: 350px;
+      margin: 0;
+      resize: none;
+    }
+  }
+  #ytrHeader {
     justify-content: center;
   }
   #search {
     width: 220px;
   }
-  main {
+  #mainContainer {
     justify-content: center;
   }
 }
-input[type="text"] {
+#search {
   padding-left: 5px;
   border-radius: 20px;
-  border: 10px;
+  border: 1px solid rgb(89, 89, 89);
   height: 30px;
   width: 440px;
 }
@@ -108,7 +152,7 @@ input[type="text"] {
   width: 32px;
   cursor: pointer;
 }
-header {
+#ytrHeader {
   min-height: 25px;
   margin-bottom: 25px;
   display: flex;
@@ -132,7 +176,24 @@ svg {
   display: flex;
   gap: 5px;
 }
+
+#root {
+  margin: 15px;
+}
 main {
-  gap: 50px;
-  display: flex;
+  iframe {
+    border: none;
+    height: 499.5px;
+    width: 888px;
+    aspect-ratio: 16/9;
+    border-radius: 15px;
+  }
+  article {
+    border: none;
+    height: 499.5px;
+    width: 888px;
+    aspect-ratio: 16/9;
+    border-radius: 15px;
+    margin-left: 95px;
+  }
 }

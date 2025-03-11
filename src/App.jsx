@@ -1,5 +1,5 @@
 import Header from "./Components/Header";
-import Main from "./Components/Main";
+import Main from "./Components/MainContainer.jsx";
 import SearchProvider from "./Contexts/searchProvider.jsx";
 
 function App() {

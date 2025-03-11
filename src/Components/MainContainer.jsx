@@ -4,12 +4,12 @@ import { useLoading } from "../hooks/useLoading.jsx";
 import { useContext } from "react";
 import { searchContext } from "../Contexts/searchProvider.jsx";
 
-export default function Main({ id, title }) {
+export default function MainContainer() {
   const { state } = useContext(searchContext);
   const { data, loading } = useLoading(state.search);
   return (
     <>
-      <main>
+      <main id="mainContainer">
         {state.counter == 0 && (
           <div className="iframeContainer">
             <p>Write a</p>
@@ -19,7 +19,10 @@ export default function Main({ id, title }) {
         )}
         {loading && <div>{"Loading..."}</div>}
         {!loading && (
-          <LiteYouTubeEmbed id={data.newVideoId} title={data.newchannelTitle} />
+          <LiteYouTubeEmbed
+            id={data.newVideoId}
+            title={data.newchannelTitle}
+          ></LiteYouTubeEmbed>
         )}
       </main>
     </>
