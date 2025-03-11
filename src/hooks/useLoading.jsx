@@ -8,7 +8,7 @@ function getRandomVideo(newData) {
   const newVideoId = newVideo.snippet.resourceId.videoId;
   return { newchannelTitle, newVideoId };
 }
-let link = "https://random-yt-video-picker-production.up.railway.app/";
+let link = "https://random-yt-video-picker-production.up.railway.app";
 
 async function fetchNewData(userName) {
   if (
